@@ -139,7 +139,7 @@ img {
   height: 24px;
   width: 24px;
   border: 2px solid #fff;
-  background: url(/img/popup-button.png) 50% 50%/80% auto no-repeat;
+  background: url("../img/popup-button.png") 50% 50%/80% auto no-repeat;
 }
 /* </popUp button check>============================================== */
 
