@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Hooli-style Popup</title>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__item_text" href="#" tabindex="1">Mail</a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_text" href="#" tabindex="2">Images</a>
+          </li>
+
+          <li class="menu__item">
+            <div class="menu__item_popUp">
+              <label class="menu__item_label">
+                <input
+                  class="menu__item_check_input visually-hidden"
+                  type="checkbox"
+                  tabindex="3"
+                />
+                <span class="menu__item_check_box"> </span>
+              </label>
+            </div>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_picture" tabindex="4" href="#">
+              <img
+                class="menu__item_picture_img"
+                src="/img/bell.png"
+                alt="Alerts"
+              />
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_picture" tabindex="5" href="#">
+              <img
+                class="menu__item_picture_img"
+                src="/img/logo.jpg"
+                alt="User"
+              />
+            </a>
+          </li>
+        </ul>
+
+        <div class="popup__wrapper">
+          <div class="popup__container">
+            <ul class="popup__items">
+              <li class="popup__item">
+                <a href="#" class="popup__link">
+                  <img
+                    class="popup__image"
+                    src="/img/icons/news.png"
+                    alt="News"
+                  />
+                  <span class="popup_label">News</span>
+                </a>
+              </li>
+              <li class="popup__item">
+                <a href="#" class="popup__link">
+                  <img
+                    class="popup__image"
+                    src="/img/icons/mail.png"
+                    alt="Mail"
+                  />
+                  <span class="popup_label">Mail</span>
+                </a>
+              </li>
+              <li class="popup__item">
+                <a href="#" class="popup__link">
+                  <img
+                    class="popup__image"
+                    src="/img/icons/contacts.png"
+                    alt="Contacts"
+                  />
+                  <span class="popup_label">Contacts</span>
+                </a>
+              </li>
+              <li class="popup__item">
+                <a href="#" class="popup__link">
+                  <img
+                    class="popup__image"
+                    src="/img/icons/photos.png"
+                    alt="Photos"
+                  />
+                  <span class="popup_label">Photos</span>
+                </a>
+              </li>
+              <li class="popup__item">
+                <a href="#" class="popup__link">
+                  <img
+                    class="popup__image"
+                    src="/img/icons/videos.png"
+                    alt="Videos"
+                  />
+                  <span class="popup_label">Videos</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
