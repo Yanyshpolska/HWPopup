@@ -97,6 +97,9 @@ img {
 .menu__item_check_input:focus + .menu__item_check_box {
   border: 2px solid rgb(135, 105, 145);
 }
+.menu__item_check_input:hover + .menu__item_check_box {
+  border: 2px solid rgb(196, 180, 201);
+}
 /* .menu__item_popUp:focus {
   border: 2px solid rgb(135, 105, 145);
 } */
