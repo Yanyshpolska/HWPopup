@@ -63,8 +63,8 @@ img {
 /*----------------------------*/
 
 .container {
-  background-color: blanchedalmond;
-  max-width: 400px;
+  background-color: rgb(255, 244, 228);
+  max-width: 1000px;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -75,51 +75,54 @@ img {
 }
 .menu__item {
   display: block;
-  height: 27px;
+  /* додати вирівнювання по центру блоку і вертикальне(для картинок) */
+  height: 24px;
   margin: 10px;
 }
+
+/* текстові блоки меню ====================================== */
 .menu__item_text {
-  border: 2px solid #fff;
+  display: block;
+  height: 24px;
+  border: 2px solid transparent;
+  border-radius: 3px;
   color: #555;
-  font-size: 18 px;
+  padding: 2px;
 }
 .menu__item_text:focus {
-  border: 2px solid rgb(135, 105, 145);
+  border-color: rgb(135, 105, 145);
 }
 .menu__item_text:hover {
-  border: 2px solid rgb(196, 180, 201);
+  border-color: rgb(196, 180, 201);
+}
+/* блоки меню з картинками - дзвінок і юзер====================================== */
+.menu__item_picture {
+  display: block;
+  height: 24px;
+  width: 24px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  padding: 2px;
+}
+.menu__item_picture:focus {
+  border-color: rgb(135, 105, 145);
+}
+.menu__item_picture:hover {
+  border-color: rgb(196, 180, 201);
+}
+.menu__item_picture_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* <popUp button check> ==============================================*/
 .menu__item_popUp {
   position: relative;
-  height: 24px;
   width: 24px;
-  /* border: 2px solid rgb(223, 136, 136);
-  background-color: blue; */
 }
-.menu__item_check_input:focus + .menu__item_check_box {
-  border: 2px solid rgb(135, 105, 145);
-}
-.menu__item_check_input:hover + .menu__item_check_box {
-  border: 2px solid rgb(196, 180, 201);
-}
-/* .menu__item_popUp:focus {
-  border: 2px solid rgb(135, 105, 145);
+/* .menu__item_label {
 } */
-/* .menu__item_popUp:hover {
-  border: 2px solid rgb(196, 180, 201);
-}
-.menu__item_check_input:checked + .menu__item_popUp {
-  border: 2px solid rgb(135, 105, 145); */
-/* } */
-
-/* {
-  background-color: rgb(152, 216, 50);
-  border: 2px solid rgb(135, 105, 145);
-} */
-
-.menu__item_label {
-}
+/* ховаємо чексбокс */
 .visually-hidden {
   position: absolute;
   height: 1px;
@@ -130,79 +133,79 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 .menu__item_check_input {
   position: absolute;
-  top: 50%;
-  left: 50%;
 }
 .menu__item_check_box {
   position: absolute;
-  margin: -2px;
+  /* margin: -2px; */
   height: 24px;
   width: 24px;
-  border: 2px solid #fff;
-  background: url("../img/popup-button.png") 50% 50%/80% auto no-repeat;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background: url("../img/popup-button.png") 50% 50%/75% auto no-repeat;
 }
-/* </popUp button check>============================================== */
-
+.menu__item_check_input:focus + .menu__item_check_box {
+  border-color: rgb(135, 105, 145);
+}
+.menu__item_check_input:hover + .menu__item_check_box {
+  border-color: rgb(196, 180, 201);
+}
 /* <popUp items visible>============================================== */
 .popup__wrapper {
-  border: 2px solid black;
+  /* display: none; */
+  border: 2px solid rgb(135, 105, 145);
+  border-radius: 3px;
   width: 300px;
   height: 300px;
   margin: auto;
+  background-color: #fff;
 }
 .popup__container {
+  padding: 3px;
 }
 .popup__items {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .popup__item {
-  border: 2px solid black;
-  width: 100px;
-  height: 70px;
+  /* border: 2px solid rgb(135, 105, 145);
+  border-radius: 3px; */
+  margin: 2px;
+  /* padding: 7px; */
+  max-width: 100px;
+  max-height: 70px;
 }
-
 .popup__link {
+  border: 2px solid transparent;
+  border-radius: 3px;
+  margin: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
-.popup__image {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  width: 40px;
-  max-height: 30px;
-  /* margin: 0px 0px 20px 0px; */
-  /* padding: 0px 0px 58% 0px; */
-  /* overflow: hidden;
-  position: relative;
+.popup__link:hover {
+  border-color: rgb(196, 180, 201);
+}
+.popup__link:focus {
+  border-color: rgb(135, 105, 145);
+}
+/* оформлення елементу - кртинка/текст */
+.popup__item_only-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 5px 17px 5px 17px;
+  height: 33px;
+  overflow: hidden;
+}
+.popup__item_image {
   width: 100%;
-  height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0; */
 }
-
-.popup_label {
+.popup__item_name {
+  color: #555;
+  margin-bottom: 5px;
 }
 /* </popUp items visible>============================================== */
-
-.menu__item_picture {
-  display: block;
-  height: 24px;
-  width: 24px;
-  border: 2px solid #fff;
-}
-.menu__item_picture:focus {
-  border: 2px solid rgb(135, 105, 145);
-}
-.menu__item_picture:hover {
-  border: 2px solid rgb(196, 180, 201);
-}
-.menu__item_picture_img {
-  height: 20px;
-}
