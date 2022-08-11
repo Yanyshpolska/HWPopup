@@ -1,4 +1,4 @@
-/* Null style */
+/* Nullable style */
 * {
   padding: 0;
   margin: 0;
@@ -41,7 +41,6 @@ button,
 textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
-
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
@@ -60,81 +59,72 @@ img {
   vertical-align: top;
 }
 
-/*----------------------------*/
-/* main {
-  height: 100%;
-  z-index-0;
-} */
-/* header {
-  z-index: 1;
-  box-shadow: 10px 5px 5px #555;
-  border: 2px solid rgb(135, 105, 145);
-} */
+/*---------------------------------------------------*/
 .container {
-  background-color: rgb(255, 244, 228);
-  max-width: 1000px;
+  background-color: #fff4e4;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
 }
-.menu {
+.main {
+  height: 100%;
+}
+/* ================Menu==================== */
+.menu__items {
+  border: 0.15em solid #c4b4c9;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .menu__item {
   display: block;
-  /* додати вирівнювання по центру блоку і вертикальне(для картинок) */
-  height: 24px;
-  margin: 10px;
+  height: 1.715em;
+  margin: 0.715em;
 }
-
-/* текстові блоки меню ====================================== */
+/* ===============Menu text items======================= */
 .menu__item_text {
   display: block;
-  height: 24px;
-  border: 2px solid transparent;
-  border-radius: 3px;
+  border: 0.15em solid transparent;
+  border-radius: 0.2em;
   color: #555;
-  padding: 2px;
+  padding: 0.2em 0.15em;
 }
 .menu__item_text:focus {
-  border-color: rgb(135, 105, 145);
+  border-color: #876991;
 }
 .menu__item_text:hover {
-  border-color: rgb(196, 180, 201);
+  border-color: #c4b4c9;
 }
-/* блоки меню з картинками - дзвінок і юзер====================================== */
+/* ===============Menu picture items==================== */
 .menu__item_picture {
   display: block;
-  height: 24px;
-  width: 24px;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  padding: 2px;
-}
-.menu__item_picture:focus {
-  border-color: rgb(135, 105, 145);
-}
-.menu__item_picture:hover {
-  border-color: rgb(196, 180, 201);
+  width: 1.715em;
+  height: 1.715em;
+  border: 0.15em solid transparent;
+  border-radius: 0.2em;
+  padding: 0.15em;
 }
 .menu__item_picture_img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* <popUp button check> ==============================================*/
-.menu__item_popUp {
-  position: relative;
-  width: 24px;
+.menu__item_picture:focus {
+  border-color: #876991;
 }
-.menu__item_label {
+.menu__item_picture:hover {
+  border-color: #c4b4c9;
+}
+/* ===============Menu checkbox item===================*/
+.menu__item_checkbox {
+  position: relative;
+  min-width: 1.715em;
+}
+.menu__item_checkbox_label {
   position: absolute;
-  /* margin: -2px; */
-  height: 24px;
-  width: 24px;
-  border: 2px solid transparent;
-  border-radius: 3px;
+  height: 1.715em;
+  width: 1.715em;
+  border: 0.15em solid transparent;
+  border-radius: 0.2em;
   background: url("../img/popup-button.png") 50% 50%/75% auto no-repeat;
 }
 /* ховаємо чексбокс */
@@ -148,123 +138,110 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.menu__item_check_input {
-  position: absolute;
+.menu__item_checkbox_input:focus ~ .menu__item_checkbox_label {
+  border-color: #876991;
 }
-.menu__item_check_box {
-  /* position: absolute;
-  height: 24px;
-  width: 24px;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  background: url("../img/popup-button.png") 50% 50%/75% auto no-repeat; */
+.menu__item_checkbox_input:hover ~ .menu__item_checkbox_label {
+  border-color: #c4b4c9;
 }
-.menu__item_check_input:focus ~ .menu__item_label {
-  border-color: rgb(135, 105, 145);
-}
-.menu__item_check_input:hover ~ .menu__item_label {
-  border-color: rgb(196, 180, 201);
-}
-
-.menu__item_check_input:checked ~ .popup__wrapper {
+.menu__item_checkbox_input:checked ~ .popup__wrapper {
   display: block;
 }
-
-/* <popUp items visible>============================================== */
+/* ================Popup menu========================== */
 .popup__wrapper {
   display: none;
-  /* position: relative; */
   position: absolute;
-  right: -90px;
-  top: 30px;
-  border: 2px solid rgb(135, 105, 145);
-  border-radius: 3px;
-  background-color: rgb(255, 250, 242);
-  width: 300px;
-  /* height: 330px; */
-  padding: 3px;
-  overflow: hidden;
+  right: -6.45em;
+  top: 2.15em;
+  border: 0.15em solid rgb(135, 105, 145);
+  border-radius: 0.2em;
+  background-color: #fffaf2;
+  width: 22em;
+  padding: 0.2em;
 }
 .popup__container {
-  height: 320px;
+  height: 23em;
   overflow: auto;
 }
 .popup__items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .popup__item {
-  /* border: 2px solid rgb(135, 105, 145);
-  border-radius: 3px; */
-  /* margin: 2px; */
-  /* padding: 7px; */
-  min-width: 33%;
-  /* max-height: 20%; */
+  flex: 0 0 33%;
 }
-
-.checkbox {
-  grid-column: 1 / 4;
-  /* grid-row: 4/5; */
-  width: 90%;
-  justify-self: center;
-  /* background-color: rgb(150, 194, 194); */
-}
-/* ============================================================================================ */
-/* .checkbox__input:checked ~ .popup__items {
-  background-color: rgb(155, 122, 70);
-} */
-.checkbox_label {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  padding: 2px;
-  background-color: rgb(253, 228, 186);
-  border-radius: 3px;
-  width: 100%;
-  border: 2px solid transparent;
-}
-.checkbox__more {
-  display: block;
-  color: #555;
-}
-.checkbox__input:hover ~ .checkbox_label {
-  border-color: rgb(196, 180, 201);
-}
-.checkbox__input:focus ~ .checkbox_label {
-  border-color: rgb(135, 105, 145);
-}
-.popup__link {
-  border: 2px solid transparent;
-  border-radius: 3px;
-  margin: 4px;
+.popup__item_link {
+  border: 0.15em solid transparent;
+  border-radius: 0.2em;
+  margin: 0.3em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
-.popup__link:hover {
-  border-color: rgb(196, 180, 201);
+.popup__item_link:hover {
+  border-color: #c4b4c9;
 }
-.popup__link:focus {
-  border-color: rgb(135, 105, 145);
+.popup__item_link:focus {
+  border-color: #876991;
 }
-/* оформлення елементу - кртинка/текст */
-.popup__item_only-image {
+.popup__item_image_container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin: 5px 17px 5px 17px;
-  height: 33px;
-  width: 46px;
-  overflow: hidden;
+  margin: 0.35em 1.2em 0.35em 1.2em;
+  height: 2.3em;
+  width: 3.3em;
 }
 .popup__item_image {
-  width: 85%;
+  height: 100%;
+  width: 100%;
   margin: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 .popup__item_name {
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 0.35em;
 }
-/* </popUp items visible>============================================== */
+/* =====================Popup more button================================= */
+.popup__item_checkbox {
+  flex-basis: 90%;
+  justify-self: center;
+}
+.popup__item_checkbox_input:checked ~ .popup__item_more {
+  display: block;
+}
+.popup__item_checkbox_input:checked ~ .popup__item_checkbox_label {
+  display: none;
+}
+.popup__item_checkbox_label {
+  display: flex;
+  justify-content: center;
+  padding: 0.15em;
+  background-color: #fde4ba;
+  border-radius: 0.2em;
+  width: 100%;
+  border: 0.15em solid transparent;
+}
+.popup__item_checkbox_more {
+  display: block;
+  color: #555;
+}
+.popup__item_checkbox_input:hover ~ .popup__item_checkbox_label {
+  border-color: #c4b4c9;
+}
+.popup__item_checkbox_input:focus ~ .popup__item_checkbox_label {
+  border-color: #876991;
+}
+.popup__item_more {
+  display: none;
+  border-top: 0.15em solid #876991;
+  grid-column: 1 / 4;
+  margin: 0 -1em;
+}
+.popup__item_more_grid {
+  display: flex;
+  flex-wrap: wrap;
+}
