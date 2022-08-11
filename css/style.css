@@ -1,4 +1,4 @@
-/* Null style */
+/* Nullable style */
 * {
   padding: 0;
   margin: 0;
@@ -149,14 +149,14 @@ img {
 }
 /* ================Popup menu========================== */
 .popup__wrapper {
-  display: block;
+  display: none;
   position: absolute;
   right: -6.45em;
   top: 2.15em;
   border: 0.15em solid rgb(135, 105, 145);
   border-radius: 0.2em;
   background-color: #fffaf2;
-  width: 21.5em;
+  width: 22em;
   padding: 0.2em;
 }
 .popup__container {
@@ -164,12 +164,12 @@ img {
   overflow: auto;
 }
 .popup__items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .popup__item {
-  min-width: 33%;
-  overflow: hidden;
+  flex: 0 0 33%;
 }
 .popup__item_link {
   border: 0.15em solid transparent;
@@ -197,6 +197,7 @@ img {
 }
 .popup__item_image {
   height: 100%;
+  width: 100%;
   margin: auto;
   object-fit: contain;
 }
@@ -204,10 +205,9 @@ img {
   color: #555;
   margin-bottom: 0.35em;
 }
-/* ===================================================================== */
+/* =====================Popup more button================================= */
 .popup__item_checkbox {
-  grid-column: 1 / 4;
-  width: 90%;
+  flex-basis: 90%;
   justify-self: center;
 }
 .popup__item_checkbox_input:checked ~ .popup__item_more {
@@ -237,13 +237,11 @@ img {
 }
 .popup__item_more {
   display: none;
-  /* border-radius: 0px; */
   border-top: 0.15em solid #876991;
   grid-column: 1 / 4;
   margin: 0 -1em;
 }
 .popup__item_more_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
 }
-/* </popUp items visible>============================================== */
